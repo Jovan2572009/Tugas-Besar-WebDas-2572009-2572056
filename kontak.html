@@ -1,55 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Ragam Jakarta | Kontak</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak - Budaya Betawi</title>
+  <meta name="description" content="Hubungi kami untuk informasi lebih lanjut tentang budaya Betawi." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <h1>Ragam Jakarta</h1>
-        <p>Tugas Besar Web Dasar</p>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">🏛️ Budaya Betawi</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="sejarah.html">Sejarah</a></li>
+        <li class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Budaya ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="kesenian.html">Kesenian</a></li>
+          </ul>
+        </li>
+        <li><a href="kuliner.html">Kuliner</a></li>
+        <li><a href="kesenian.html">Kesenian</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="navbar">
-        <div class="navbar-menu">
-            <a href="index.html">Beranda</a>
-            <a href="sejarah.html">Sejarah</a>
-            <a href="seni.html">Seni Budaya</a>
-            <a href="kuliner.html">Kuliner</a>
-            <a href="kontak.html">Kontak</a>
+  <section class="container">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <p class="section-sub">Punya pertanyaan atau ingin berkontribusi? Kirim pesan!</p>
+
+    <div class="form-card fade-up">
+      <form id="kontakForm" novalidate>
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Contoh: Andi Saputra" required />
         </div>
-        <button id="tombolTema">Mode Gelap</button>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
+        </div>
+        <div class="form-group">
+          <label for="minat">Minat Budaya</label>
+          <select id="minat" name="minat" required>
+            <option value="">-- Pilih kategori --</option>
+            <option value="Sejarah">Sejarah</option>
+            <option value="Kuliner">Kuliner</option>
+            <option value="Kesenian">Kesenian</option>
+            <option value="Pakaian Adat">Pakaian Adat</option>
+            <option value="Musik Tradisional">Musik Tradisional</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan Anda..." required></textarea>
+        </div>
+        <div class="form-group checkbox-row">
+          <input type="checkbox" id="setuju" name="setuju" />
+          <label for="setuju">Saya setuju data digunakan untuk tujuan komunikasi.</label>
+        </div>
+        <button type="submit" class="btn">Kirim Pesan</button>
+        <div id="formResult" style="display:none"></div>
+      </form>
     </div>
 
-    <div class="content">
-        <h2>Sampaikan Pesan dan Kesanmu!</h2>
-        <p>Terima kasih telah menjelajahi website budaya sederhana kami. Apakah Anda menemukan kesalahan informasi sejarah? Atau Anda memiliki rekomendasi kuliner Betawi lain yang harus kami masukkan ke dalam website ini? Jangan ragu untuk menghubungi tim pengembang kami!</p>
-        <p><em>Catatan: Karena ini adalah proyek simulasi tugas kampus, pesan yang Anda kirim hanya akan diproses oleh sistem JavaScript kami secara lokal.</em></p>
-
-        <form id="formKontak" style="margin-top: 25px;">
-            <div class="grup-input">
-                <label>Nama Lengkap:</label>
-                <input type="text" id="inputNama" placeholder="Ketik nama lengkap Anda...">
-            </div>
-            
-            <div class="grup-input">
-                <label>Alamat Email:</label>
-                <input type="email" id="inputEmail" placeholder="contoh@domain.com">
-            </div>
-
-            <div class="grup-input">
-                <label>Pesan, Kritik, atau Saran:</label>
-                <textarea id="inputPesan" rows="5" placeholder="Ceritakan pengalaman Anda di sini..."></textarea>
-            </div>
-
-            <button type="button" id="tombolKirim">Kirim Pesan Sekarang</button>
-        </form>
+    <div class="grid" style="margin-top:2.5rem">
+      <div class="card fade-up"><div class="card-body">
+        <h3>📍 Alamat</h3><p>Jl. Setu Babakan No. 1, Srengseng Sawah, Jakarta Selatan.</p>
+      </div></div>
+      <div class="card fade-up"><div class="card-body">
+        <h3>📞 Telepon</h3><p>+62 21 1234 5678</p>
+      </div></div>
+      <div class="card fade-up"><div class="card-body">
+        <h3>✉️ Email</h3><p>info@budayabetawi.id</p>
+      </div></div>
     </div>
+  </section>
 
-    <div class="footer">
-        <p>Copyright 2026 - 2572009 Jovan & Alifi</p>
-    </div>
+  <footer>
+    <p><strong>Budaya Betawi</strong> — Mengenal warisan tradisi Jakarta.</p>
+    <div class="socials"><a href="#">IG</a><a href="#">FB</a><a href="#">TW</a></div>
+    <small>&copy; <span id="year"></span> Budaya Betawi.</small>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

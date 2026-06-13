@@ -1,44 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ragam Jakarta | Beranda</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budaya Betawi - Beranda</title>
+  <meta name="description" content="Mengenal budaya Betawi khas Jakarta: sejarah, kuliner, pakaian, dan kesenian tradisional." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <h1>Ragam Jakarta</h1>
-        <p>Tugas Besar Web Dasar</p>
+  
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">🏛️ Budaya Betawi</a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="sejarah.html">Sejarah</a></li>
+        <li class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Budaya ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="kesenian.html">Kesenian</a></li>
+          </ul>
+        </li>
+        <li><a href="kuliner.html">Kuliner</a></li>
+        <li><a href="kesenian.html">Kesenian</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
     </div>
+  </nav>
 
-   <div class="navbar">
-        <div class="navbar-menu">
-            <a href="index.html">Beranda</a>
-            <a href="sejarah.html">Sejarah</a>
-            <a href="seni.html">Seni Budaya</a>
-            <a href="kuliner.html">Kuliner</a>
-            <a href="kontak.html">Kontak</a>
+  
+  <header class="hero">
+    <div>
+      <h1>Selamat Datang di Budaya Betawi</h1>
+      <p>Menelusuri kekayaan tradisi, kuliner, dan kesenian dari ibu kota Jakarta — warisan suku Betawi yang penuh warna.</p>
+      <a href="sejarah.html" class="btn">Jelajahi Sekarang</a>
+      <a href="kontak.html" class="btn outline" style="margin-left:.5rem">Hubungi Kami</a>
+    </div>
+  </header>
+
+  
+  <section class="container">
+    <h2 class="section-title">Tentang Budaya Betawi</h2>
+    <p class="section-sub">Identitas asli warga Jakarta yang lahir dari akulturasi berbagai bangsa</p>
+    <div class="feature fade-up">
+      <img src="img/ondel.jpg" alt="Ondel-ondel Betawi" loading="lazy" />
+      <div class="feature-text">
+        <h2>Akulturasi Budaya</h2>
+        <p>Budaya Betawi merupakan perpaduan unik dari budaya Melayu, Sunda, Jawa, Arab, Tiongkok, India, dan Eropa. Akulturasi ini melahirkan kesenian, bahasa, kuliner, dan adat istiadat yang khas dan tidak ditemukan di daerah lain.</p>
+        <ul class="fakta-list">
+          <li>🎭 Ondel-ondel sebagai ikon kebudayaan</li>
+          <li>🍲 Kuliner kaya rempah seperti Soto Betawi & Kerak Telor</li>
+          <li>🎺 Musik Tanjidor & Gambang Kromong</li>
+          <li>🏠 Rumah adat Kebaya yang elegan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="container">
+    <h2 class="section-title">Highlight Budaya</h2>
+    <p class="section-sub">Jelajahi berbagai aspek budaya Betawi</p>
+    <div class="grid">
+      <article class="card fade-up">
+        <img src="img/rumah.jpg" alt="Rumah Kebaya" loading="lazy" />
+        <div class="card-body">
+          <h3>Rumah Kebaya</h3>
+          <p>Rumah adat khas Betawi dengan teras luas dan atap menyerupai lipatan kebaya.</p>
+          <span class="badge">Arsitektur</span>
         </div>
-        <button id="tombolTema">Mode Gelap</button>
-    </div>
-
-    <div class="content">
-        <h2>Selamat Datang di Portal Budaya Jakarta!</h2>
-        <p>Website ini dibuat untuk mengeksplorasi kebudayaan ibu kota tercinta.</p>
-        
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1584813470613-5a181acf0933?w=800" alt="Ikon Jakarta">
+      </article>
+      <article class="card fade-up">
+        <img src="img/kerak.jpg" alt="Kerak Telor" loading="lazy" />
+        <div class="card-body">
+          <h3>Kerak Telor</h3>
+          <p>Makanan legendaris berbahan ketan, telur bebek, dan serundeng kelapa.</p>
+          <span class="badge">Kuliner</span>
         </div>
-
-        <div class="info-box">
-            <h3>Tentang Proyek Ini</h3>
-            <p>Kami menyajikan rangkuman sejarah dari zaman Batavia, hingga kekayaan seni dan kuliner suku Betawi yang wajib dilestarikan!</p>
+      </article>
+      <article class="card fade-up">
+        <img src="img/tanjidor.jpg" alt="Tanjidor" loading="lazy" />
+        <div class="card-body">
+          <h3>Tanjidor</h3>
+          <p>Orkes rakyat Betawi dengan alat musik tiup logam warisan kolonial.</p>
+          <span class="badge">Musik</span>
         </div>
+      </article>
     </div>
+  </section>
 
-    <div class="footer">
-        <p>Copyright 2026 - Tugas Besar Web Dasar</p>
+  <footer>
+    <p><strong>Budaya Betawi</strong> — Mengenal warisan tradisi Jakarta.</p>
+    <div class="socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">FB</a>
+      <a href="#" aria-label="Twitter">TW</a>
     </div>
+    <small>&copy; <span id="year"></span> Budaya Betawi. Dibuat untuk Tugas Besar Web Dasar.</small>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

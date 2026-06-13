@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesenian Betawi - Budaya Jakarta</title>
+  <meta name="description" content="Kesenian khas Betawi: Ondel-ondel, Tanjidor, Lenong, pakaian adat, dan rumah Kebaya." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">🏛️ Budaya Betawi</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="sejarah.html">Sejarah</a></li>
+        <li class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Budaya ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="kesenian.html">Kesenian</a></li>
+          </ul>
+        </li>
+        <li><a href="kuliner.html">Kuliner</a></li>
+        <li><a href="kesenian.html">Kesenian</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="container">
+    <h2 class="section-title">Kesenian & Tradisi</h2>
+    <p class="section-sub">Warna-warni warisan seni Betawi</p>
+
+    <div class="grid">
+      <article class="card fade-up">
+        <img src="img/ondel.jpg" alt="Ondel-ondel" loading="lazy" />
+        <div class="card-body">
+          <h3>Ondel-ondel</h3>
+          <p>Boneka raksasa setinggi 2,5 meter yang menjadi simbol kota Jakarta. Awalnya dipakai untuk menolak bala.</p>
+          <span class="badge">Seni Pertunjukan</span>
+        </div>
+      </article>
+      <article class="card fade-up">
+        <img src="img/tanjidor.jpg" alt="Tanjidor" loading="lazy" />
+        <div class="card-body">
+          <h3>Tanjidor</h3>
+          <p>Orkes musik tiup logam warisan kolonial Belanda yang diadaptasi masyarakat Betawi sejak abad ke-19.</p>
+          <span class="badge">Musik</span>
+        </div>
+      </article>
+      <article class="card fade-up">
+        <img src="img/pakaian.jpg" alt="Pakaian Adat Betawi" loading="lazy" />
+        <div class="card-body">
+          <h3>Pakaian Adat</h3>
+          <p>Pria mengenakan baju Sadariah dengan peci, wanita memakai Kebaya Encim dengan kerudung khas.</p>
+          <span class="badge">Pakaian</span>
+        </div>
+      </article>
+      <article class="card fade-up">
+        <img src="img/rumah.jpg" alt="Rumah Kebaya" loading="lazy" />
+        <div class="card-body">
+          <h3>Rumah Kebaya</h3>
+          <p>Rumah tradisional dengan teras luas, atap pelana berlipat menyerupai kebaya, dan ornamen ukiran khas.</p>
+          <span class="badge">Arsitektur</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- KUIS -->
+    <h3 style="margin-top:3rem;text-align:center;color:var(--merah)">Uji Pengetahuan Anda!</h3>
+    <p style="text-align:center;color:#666;margin-bottom:1.5rem">Kuis interaktif tentang Budaya Betawi</p>
+    <div class="quiz-card" id="quizBox"></div>
+  </section>
+
+  <footer>
+    <p><strong>Budaya Betawi</strong> — Mengenal warisan tradisi Jakarta.</p>
+    <div class="socials"><a href="#">IG</a><a href="#">FB</a><a href="#">TW</a></div>
+    <small>&copy; <span id="year"></span> Budaya Betawi.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

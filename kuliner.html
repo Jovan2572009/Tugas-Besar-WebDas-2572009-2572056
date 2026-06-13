@@ -1,52 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Ragam Jakarta | Kuliner Khas</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuliner Betawi - Budaya Jakarta</title>
+  <meta name="description" content="Ragam kuliner khas Betawi: Kerak Telor, Soto Betawi, Nasi Uduk dan lainnya." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <h1>Ragam Jakarta</h1>
-        <p>Tugas Besar Web Dasar</p>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">🏛️ Budaya Betawi</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="sejarah.html">Sejarah</a></li>
+        <li class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Budaya ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="kesenian.html">Kesenian</a></li>
+          </ul>
+        </li>
+        <li><a href="kuliner.html">Kuliner</a></li>
+        <li><a href="kesenian.html">Kesenian</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="container">
+    <h2 class="section-title">Kuliner Khas Betawi</h2>
+    <p class="section-sub">Cita rasa autentik ibu kota</p>
+
+    <!-- Filter buttons -->
+    <div style="text-align:center;margin-bottom:1.2rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center">
+      <button class="btn filter-btn active" data-f="semua" onclick="filterGaleri('semua')">Semua</button>
+      <button class="btn filter-btn" data-f="berat" onclick="filterGaleri('berat')">Makanan Berat</button>
+      <button class="btn filter-btn" data-f="ringan" onclick="filterGaleri('ringan')">Camilan</button>
     </div>
 
-    <div class="navbar">
-        <div class="navbar-menu">
-            <a href="index.html">Beranda</a>
-            <a href="sejarah.html">Sejarah</a>
-            <a href="seni.html">Seni Budaya</a>
-            <a href="kuliner.html">Kuliner</a>
-            <a href="kontak.html">Kontak</a>
+    <div class="grid">
+      <article class="card fade-up" data-kategori="ringan">
+        <img src="img/kerak.jpg" alt="Kerak Telor" loading="lazy" />
+        <div class="card-body">
+          <h3>Kerak Telor</h3>
+          <p>Hidangan ikonik berbahan beras ketan putih, telur bebek/ayam, ebi, dan serundeng kelapa sangrai. Dimasak di atas tungku arang.</p>
+          <span class="badge">Camilan</span>
         </div>
-        <button id="tombolTema">Mode Gelap</button>
-    </div>
-
-    <div class="content">
-        <h2>Jelajah Rasa Kuliner Betawi</h2>
-        <p>Kuliner Betawi memiliki ciri khas rasa yang gurih dan penggunaan rempah-rempah yang berani. Sama halnya dengan kesenian, makanan Betawi juga mendapat banyak pengaruh dari berbagai belahan dunia, menciptakan hidangan legendaris yang selalu dicari hingga saat ini.</p>
-        
-        <div class="list-sejarah">
-            <ul>
-                <li>
-                    <strong>🍳 Kerak Telor: Omelet Tradisional yang Unik</strong> <br>
-                    Makanan ringan primadona setiap kali Pekan Raya Jakarta (PRJ) digelar! Terbuat dari ketan putih yang dicampur dengan telur bebek atau ayam, ebi sangrai, dan bawang goreng. Cara memasaknya sangat unik karena wajannya akan dibalik menghadap arang kayu agar permukaannya sedikit gosong dan renyah. Rasanya sangat gurih dan harum!
-                </li>
-                <li>
-                    <strong>🍲 Soto Betawi: Kuah Kental yang Menggugah Selera</strong> <br>
-                    Berbeda dengan soto dari daerah Jawa lainnya yang berkuah bening, Soto Betawi menggunakan campuran kuah santan dan susu sapi yang membuatnya sangat kental (*creamy*). Isian utamanya adalah potongan daging sapi dadu, tomat segar, kentang goreng, dan taburan emping. Sedikit kucuran jeruk limau akan menyempurnakan kelezatannya.
-                </li>
-                <li>
-                    <strong>🍹 Bir Pletok: Minuman Hangat Penolak Angin</strong> <br>
-                    Meskipun memiliki kata "Bir" pada namanya, minuman ini 100% halal dan bebas alkohol. Warnanya yang merah menggoda berasal dari serutan kayu secang. Diracik dengan jahe, daun pandan, serai, dan rempah lainnya, minuman ini dulunya diciptakan oleh orang Betawi yang ingin merasakan gaya minum bir ala orang Belanda, namun tetap menjaga kehangatan tubuh dan manfaat kesehatan.
-                </li>
-            </ul>
+      </article>
+      <article class="card fade-up" data-kategori="berat">
+        <img src="img/soto.jpg" alt="Soto Betawi" loading="lazy" />
+        <div class="card-body">
+          <h3>Soto Betawi</h3>
+          <p>Soto berkuah santan atau susu dengan potongan daging sapi, jeroan, dan kentang. Kuahnya gurih dan kaya rempah.</p>
+          <span class="badge">Makanan Berat</span>
         </div>
+      </article>
+      <article class="card fade-up" data-kategori="berat">
+        <img src="img/nasiuduk.jpg" alt="Nasi Uduk" loading="lazy" />
+        <div class="card-body">
+          <h3>Nasi Uduk</h3>
+          <p>Nasi gurih bersantan dengan aneka lauk: ayam goreng, tempe orek, telur dadar, dan sambal kacang.</p>
+          <span class="badge">Makanan Berat</span>
+        </div>
+      </article>
+      <article class="card fade-up" data-kategori="ringan">
+        <img src="img/kerak.jpg" alt="Dodol Betawi" loading="lazy" />
+        <div class="card-body">
+          <h3>Dodol Betawi</h3>
+          <p>Camilan manis dari ketan, gula merah, dan santan yang dimasak berjam-jam. Populer saat lebaran.</p>
+          <span class="badge">Camilan</span>
+        </div>
+      </article>
+      <article class="card fade-up" data-kategori="berat">
+        <img src="img/soto.jpg" alt="Gabus Pucung" loading="lazy" />
+        <div class="card-body">
+          <h3>Gabus Pucung</h3>
+          <p>Ikan gabus berkuah hitam dari keluak. Hidangan tradisional yang langka tapi sangat khas.</p>
+          <span class="badge">Makanan Berat</span>
+        </div>
+      </article>
+      <article class="card fade-up" data-kategori="ringan">
+        <img src="img/nasiuduk.jpg" alt="Bir Pletok" loading="lazy" />
+        <div class="card-body">
+          <h3>Bir Pletok</h3>
+          <p>Minuman tradisional non-alkohol dari jahe, serai, dan rempah. Hangat dan menyegarkan.</p>
+          <span class="badge">Minuman</span>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div class="footer">
-        <p>Copyright 2026 - 2572009 Jovan & Alifi</p>
-    </div>
+  <footer>
+    <p><strong>Budaya Betawi</strong> — Mengenal warisan tradisi Jakarta.</p>
+    <div class="socials"><a href="#">IG</a><a href="#">FB</a><a href="#">TW</a></div>
+    <small>&copy; <span id="year"></span> Budaya Betawi.</small>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

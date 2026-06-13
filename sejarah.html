@@ -1,56 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Ragam Jakarta | Sejarah</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sejarah Betawi - Budaya Jakarta</title>
+  <meta name="description" content="Sejarah singkat suku Betawi sebagai penduduk asli Jakarta dari masa Sunda Kelapa hingga kini." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <h1>Ragam Jakarta</h1>
-        <p>Tugas Besar Web Dasar</p>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">🏛️ Budaya Betawi</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="sejarah.html">Sejarah</a></li>
+        <li class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Budaya ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="kesenian.html">Kesenian</a></li>
+          </ul>
+        </li>
+        <li><a href="kuliner.html">Kuliner</a></li>
+        <li><a href="kesenian.html">Kesenian</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="container">
+    <h2 class="section-title">Sejarah Suku Betawi</h2>
+    <p class="section-sub">Perjalanan panjang penduduk asli Jakarta</p>
+
+    <div class="feature fade-up">
+      <img src="img/hero.jpg" alt="Kota Tua Jakarta" loading="lazy" />
+      <div class="feature-text">
+        <h2>Asal Usul</h2>
+        <p>Suku Betawi adalah penduduk asli Jakarta yang terbentuk dari akulturasi berbagai etnis sejak abad ke-17, ketika Batavia menjadi pusat perdagangan VOC. Nama "Betawi" sendiri berasal dari kata "Batavia".</p>
+        <p>Mereka merupakan perpaduan keturunan Melayu, Sunda, Jawa, Bugis, Bali, Arab, Tionghoa, India, hingga Portugis dan Belanda.</p>
+      </div>
     </div>
 
-    <div class="navbar">
-        <div class="navbar-menu">
-            <a href="index.html">Beranda</a>
-            <a href="sejarah.html">Sejarah</a>
-            <a href="seni.html">Seni Budaya</a>
-            <a href="kuliner.html">Kuliner</a>
-            <a href="kontak.html">Kontak</a>
-        </div>
-        <button id="tombolTema">Mode Gelap</button>
+    <h3 style="margin-top:2.5rem;color:var(--merah)">Garis Waktu Penting</h3>
+    <div class="timeline">
+      <div class="timeline-item fade-up">
+        <h4>1527 - Sunda Kelapa menjadi Jayakarta</h4>
+        <p>Fatahillah merebut Sunda Kelapa dan mengganti namanya menjadi Jayakarta, cikal bakal Jakarta modern.</p>
+      </div>
+      <div class="timeline-item fade-up">
+        <h4>1619 - Berdirinya Batavia</h4>
+        <p>VOC mendirikan kota Batavia, menjadikannya pusat perdagangan dan titik awal akulturasi budaya Betawi.</p>
+      </div>
+      <div class="timeline-item fade-up">
+        <h4>Abad 18-19 - Lahirnya Identitas Betawi</h4>
+        <p>Perpaduan beragam etnis membentuk bahasa, kesenian, dan kuliner khas Betawi.</p>
+      </div>
+      <div class="timeline-item fade-up">
+        <h4>1923 - Istilah "Orang Betawi"</h4>
+        <p>Tokoh Mohammad Husni Thamrin mempopulerkan istilah ini sebagai identitas politik dan budaya.</p>
+      </div>
+      <div class="timeline-item fade-up">
+        <h4>2024 - Pelestarian Budaya</h4>
+        <p>Pemerintah DKI rutin menggelar Lebaran Betawi & Pekan Raya Jakarta untuk melestarikan warisan ini.</p>
+      </div>
     </div>
 
-    <div class="content">
-        <h2>Kronologi Lengkap Sejarah Jakarta</h2>
-        <p>Perjalanan Jakarta untuk menjadi sebuah kota megapolitan sangatlah dinamis. Kota ini telah berganti nama berkali-kali seiring dengan pergantian kekuasaan yang terjadi di masa lampau. Berikut adalah catatan sejarah penting yang merangkum evolusi kota ini:</p>
-        
-        <div class="list-sejarah">
-            <ul>
-                <li>
-                    <strong>22 Juni 1527 (Sunda Kelapa ke Jayakarta):</strong> 
-                    Pasukan gabungan Kesultanan Demak dan Cirebon di bawah pimpinan Fatahillah berhasil merebut pelabuhan strategis Sunda Kelapa dari tangan Kerajaan Pajajaran dan pengaruh Portugis. Nama kota ini kemudian diubah menjadi Jayakarta yang bermakna "Kota Kemenangan yang Gemilang". Tanggal inilah yang hingga kini dirayakan sebagai hari ulang tahun kota Jakarta.
-                </li>
-                <li>
-                    <strong>Tahun 1619 (Jayakarta ke Batavia):</strong> 
-                    VOC (Vereenigde Oostindische Compagnie) di bawah komando Gubernur Jenderal Jan Pieterszoon Coen menaklukkan Jayakarta dan membumihanguskannya. Di atas reruntuhan tersebut, Belanda membangun kota baru yang dinamakan Batavia. Kota ini dirancang menyerupai kota-kota di Belanda lengkap dengan sistem kanal, yang sisa-sisa bangunannya masih bisa kita nikmati di kawasan Kota Tua saat ini.
-                </li>
-                <li>
-                    <strong>Tahun 1942 (Batavia ke Djakarta):</strong> 
-                    Saat masa kependudukan Kekaisaran Jepang di Nusantara, nama Batavia diganti menjadi "Tokubetsu Shi Djakarta" (Kota Spesial Djakarta). Perubahan nama ini adalah bagian dari strategi propaganda Jepang untuk menarik simpati rakyat Indonesia dengan cara menghapus berbagai macam pengaruh dari Belanda.
-                </li>
-            </ul>
-        </div>
+    <h3 style="margin-top:2rem;color:var(--merah)">Fakta Menarik</h3>
+    <ul class="fakta-list">
+      <li>📜 Bahasa Betawi merupakan dialek Melayu Pasar dengan banyak serapan asing.</li>
+      <li>🎭 Lenong adalah teater rakyat Betawi yang sarat humor dan kritik sosial.</li>
+      <li>🥁 Gambang Kromong menggabungkan unsur musik Tionghoa dan pribumi.</li>
+      <li>🕌 Ulama Betawi seperti Guru Mansyur dikenal sebagai tokoh penyebar Islam.</li>
+    </ul>
+  </section>
 
-        <div class="galeri">
-            <img src="https://images.unsplash.com/photo-1599954737330-22eb45a5fbc4?w=400" alt="Kota Tua Jakarta">
-        </div>
-    </div>
+  <footer>
+    <p><strong>Budaya Betawi</strong> — Mengenal warisan tradisi Jakarta.</p>
+    <div class="socials"><a href="#">IG</a><a href="#">FB</a><a href="#">TW</a></div>
+    <small>&copy; <span id="year"></span> Budaya Betawi.</small>
+  </footer>
 
-    <div class="footer">
-        <p>Copyright 2026 - 2572009 Jovan & Alifi</p>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
