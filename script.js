@@ -1,20 +1,15 @@
-/* ============================================
-   Budaya Betawi - script.js
-   Berisi: JS Functions, Events, Conditional, Looping
-============================================ */
 
-// ====== 1. Toggle Menu Mobile (JS Event + Function) ======
 function toggleMenu() {
   const links = document.getElementById('navLinks');
   if (links) links.classList.toggle('open');
 }
 
-// ====== 2. Dropdown Submenu ======
-function toggleDropdown(el) {
-  el.classList.toggle('show');
+
+function toggleDropdown(drop) {
+  drop.classList.toggle('show');
 }
 
-// ====== 3. Highlight Active Link (Looping + Conditional) ======
+
 function setActiveLink() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
   const links = document.querySelectorAll('.nav-links a');
@@ -28,7 +23,7 @@ function setActiveLink() {
   }
 }
 
-// ====== 4. Scroll Reveal Animation (Event + Looping) ======
+
 function initReveal() {
   const items = document.querySelectorAll('.fade-up');
   const reveal = () => {
@@ -42,7 +37,7 @@ function initReveal() {
   reveal();
 }
 
-// ====== 5. Form Validation (Conditional) ======
+
 function handleFormSubmit(e) {
   e.preventDefault();
   const f = e.target;
@@ -53,7 +48,7 @@ function handleFormSubmit(e) {
   const pesan = f.pesan.value.trim();
   const setuju = f.setuju.checked;
 
-  // validasi
+
   if (nama.length < 3) return showAlert(out, 'Nama minimal 3 karakter.', 'error');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showAlert(out, 'Format email tidak valid.', 'error');
   if (!minat) return showAlert(out, 'Pilih minat budaya terlebih dahulu.', 'error');
@@ -71,7 +66,7 @@ function showAlert(el, msg, type) {
   el.style.display = 'block';
 }
 
-// ====== 6. Kuis Budaya Betawi (Looping + Conditional) ======
+
 const quizData = [
   {
     q: 'Apa nama boneka raksasa khas Betawi yang sering tampil di acara budaya?',
@@ -135,7 +130,7 @@ function restartQuiz() {
   quizIndex = 0; quizScore = 0; renderQuiz();
 }
 
-// ====== 7. Filter Galeri (Conditional + Looping) ======
+
 function filterGaleri(kategori) {
   const cards = document.querySelectorAll('[data-kategori]');
   cards.forEach(c => {
@@ -150,13 +145,13 @@ function filterGaleri(kategori) {
   if (active) active.classList.add('active');
 }
 
-// ====== 8. Tahun Footer Dinamis ======
+
 function setYear() {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 }
 
-// ====== INIT ======
+
 document.addEventListener('DOMContentLoaded', () => {
   setActiveLink();
   initReveal();
