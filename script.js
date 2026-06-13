@@ -1,76 +1,45 @@
+var tombolTema = document.getElementById("tombolTema");
 
-        const themeBtn = document.getElementById('themeBtn');
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                themeBtn.innerText = 'Mode Gelap';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeBtn.innerText = 'Mode Terang';
-            }
-        });
+if (tombolTema) {
+    tombolTema.onclick = function() {
+        var body = document.body;
+        var konten = document.querySelector(".content");
 
-       
-        const textArr = ["Menelusuri Histori Batavia.", "Mengenal Warisan Kultural Betawi.", "Proyek WebDas Kelompok Jovan & Alifi."];
-        let textIndex = 0;
-        let charIndex = 0;
-        const typewriterElement = document.getElementById('typewriter');
-
-        function type() {
-            if (charIndex < textArr[textIndex].length) {
-                typewriterElement.innerHTML += textArr[textIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(type, 100);
-            } else {
-                setTimeout(erase, 2000);
-            }
+        if (body.style.backgroundColor === "black") {
+            body.style.backgroundColor = "#f4f4f4";
+            body.style.color = "#333333";
+            konten.style.backgroundColor = "white";
+            tombolTema.innerHTML = "Mode Gelap";
+        } else {
+            body.style.backgroundColor = "black";
+            body.style.color = "white";
+            konten.style.backgroundColor = "#222222";
+            tombolTema.innerHTML = "Mode Terang";
         }
+    };
+}
 
-        function erase() {
-            if (charIndex > 0) {
-                typewriterElement.innerHTML = textArr[textIndex].substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(erase, 50);
-            } else {
-                textIndex = (textIndex + 1) % textArr.length;
-                setTimeout(type, 500);
-            }
-        }
-        
-        document.addEventListener("DOMContentLoaded", () => {
-            setTimeout(type, 1000);
-        });
+var tombolKirim = document.getElementById("tombolKirim");
 
-       
-        const modal = document.getElementById('infoModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalBody = document.getElementById('modalBody');
+if (tombolKirim) {
+    tombolKirim.onclick = function() {
+        var nama = document.getElementById("inputNama").value;
+        var email = document.getElementById("inputEmail").value;
+        var pesan = document.getElementById("inputPesan").value;
 
-        function openModal(title, text) {
-            modalTitle.innerText = title;
-            modalBody.innerText = text;
-            modal.style.display = 'flex';
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-
-        
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
+        if (nama === "") {
+            alert("Hei! Namanya jangan dikosongin dong!");
+        } else if (email === "") {
+            alert("Emailnya juga harus diisi!");
+        } else if (pesan === "") {
+            alert("Tulis pesannya dulu!");
+        } else {
+            alert("Bagus! Pesan dari " + nama + " berhasil disimulasikan terkirim.");
+            
+            var semuaInput = document.querySelectorAll("#formKontak input, #formKontak textarea");
+            for (var i = 0; i < semuaInput.length; i++) {
+                semuaInput[i].value = "";
             }
         }
-
-        
-        document.querySelectorAll('nav ul li a, .btn').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+    };
+}

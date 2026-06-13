@@ -1,128 +1,44 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ragam Jakarta - Sejarah & Budaya</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ragam Jakarta | Beranda</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <h1>Ragam Jakarta</h1>
+        <p>Tugas Besar Web Dasar</p>
+    </div>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">Ragam<span>Jakarta</span></div>
-            <div class="nav-right">
-                <nav>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#sejarah">Sejarah</a></li>
-                        <li><a href="#budaya">Budaya</a></li>
-                    </ul>
-                </nav>
-                <button class="theme-toggle" id="themeBtn">Mode Gelap</button>
-            </div>
+   <div class="navbar">
+        <div class="navbar-menu">
+            <a href="index.html">Beranda</a>
+            <a href="sejarah.html">Sejarah</a>
+            <a href="seni.html">Seni Budaya</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="kontak.html">Kontak</a>
         </div>
-    </header>
+        <button id="tombolTema">Mode Gelap</button>
+    </div>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Eksplorasi Jakarta</h1>
-            <div id="typewriter"></div>
-            <p>Menyajikan arsip sejarah dan entitas seni kebudayaan Betawi yang dihimpun secara terstruktur untuk pemenuhan Tugas Besar WebDas.</p>
-            <a href="#sejarah" class="btn">Mulai Jelajah</a>
+    <div class="content">
+        <h2>Selamat Datang di Portal Budaya Jakarta!</h2>
+        <p>Website ini dibuat untuk mengeksplorasi kebudayaan ibu kota tercinta.</p>
+        
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1584813470613-5a181acf0933?w=800" alt="Ikon Jakarta">
         </div>
-    </section>
 
-    <section class="container" id="sejarah">
-        <h2 class="section-title">Arsip Sejarah DKI Jakarta</h2>
-        <div class="sejarah-wrapper">
-            <span class="wiki-source">Sumber: Wikipedia Indonesia</span>
-            <div class="sejarah-grid">
-                <div class="sejarah-text">
-                    <h3>Kronologi Lintasan Sejarah</h3>
-                    <p style="margin-top: 10px;">Berdasarkan catatan sejarah, Jakarta mula-mula dikenal sebagai pelabuhan perdagangan Kerajaan Sunda yang bernama <strong>Sunda Kelapa</strong>. Wilayah ini berkembang menjadi titik krusial perebutan kekuasaan antar kerajaan lokal hingga kongsi dagang barat.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <p class="timeline-year">22 Juni 1527 (Jayakarta)</p>
-                            <p>Fatahillah memimpin pasukan Kesultanan Demak merebut pelabuhan Sunda Kelapa dari Portugis, lalu mengubah namanya menjadi Jayakarta yang bermakna "kota kemenangan". Tanggal ini kini diperingati sebagai HUT Jakarta.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <p class="timeline-year">Tahun 1619 (Batavia Belanda)</p>
-                            <p>Jan Pieterszoon Coen memimpin pasukan VOC menghancurkan Jayakarta, kemudian membangun kota baru berarsitektur Eropa abad pertengahan bernama <strong>Batavia</strong> di muara Sungai Ciliwung.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <p class="timeline-year">Tahun 1942 (Djakarta)</p>
-                            <p>Pemerintahan militer Jepang menduduki Nusantara dan mengubah nama kota menjadi Djakarta demi menarik simpati masyarakat sipil pada Perang Dunia II.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <p class="timeline-year">Tahun 2007 (DKI Jakarta)</p>
-                            <p>Disahkannya UU No. 29 Tahun 2007 yang mematenkan status otonomi khusus sebagai Daerah Khusus Ibukota Jakarta selaku pusat pemerintahan megapolitan nasional.</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <img src="sejarah.jpg" alt="Kota Tua Batavia" class="sejarah-img">
-                    <p style="font-size: 0.85rem; text-align: center; margin-top: 10px; opacity: 0.7;"><i>Visualisasi Kawasan Cagar Budaya Kota Tua (Eks-Batavia)</i></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container" id="budaya">
-        <h2 class="section-title">Entitas Budaya Betawi</h2>
-        <div class="grid-budaya">
-            
-            <div class="card">
-                <img src="ondel-ondel.jpg" alt="Ondel-ondel" class="card-img">
-                <div class="card-content">
-                    <h3>Ondel-Ondel</h3>
-                    <p>Pertunjukan seni topeng boneka raksasa setinggi 2,5 meter khas Betawi yang dianyam dari bambu.</p>
-                    <button class="card-btn" onclick="openModal('Ondel-Ondel', 'Menurut Wikipedia, istilah nama Betawi sendiri lahir di abad ke-17 dari asimilasi ragam etnis. Seni Ondel-ondel mulanya berfungsi sebagai penolak bala (ritual pengusir wabah penyakit) yang diawali ritus pembakaran kemenyan. Kedok (topeng) laki-laki berwarna merah melambangkan keberanian, sedangkan perempuan berwarna putih melambangkan kesucian. Musik pengiring utamanya adalah kesenian Gambang Kromong atau Tanjidor.')">Baca Selengkapnya</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="kerak-telor.png" alt="Kerak Telor" class="card-img">
-                <div class="card-content">
-                    <h3>Kerak Telor</h3>
-                    <p>Makanan tradisional legendaris yang identik dengan perayaan pesta rakyat tahunan Pekan Raya Jakarta.</p>
-                    <button class="card-btn" onclick="openModal('Kerak Telor', 'Kerak telor adalah hidangan asli Betawi berupa ketan putih yang dimasak di atas wajan cekung tanpa minyak bersama telur (ayam atau bebek), diberi bumbu halus (kelapa sangrai, cabai, kencur, jahe), lalu dibalik menghadap arang agar matang merata. Terakhir ditaburi serundeng ebi gurih.')">Baca Selengkapnya</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="betawi.jpg" alt="Suku Betawi" class="card-img">
-                <div class="card-content">
-                    <h3>Asal-Usul Suku Betawi</h3>
-                    <p>Suku Betawi terbentuk dari percampuran genetika dan kultur berbagai etnis nusantara dan global.</p>
-                    <button class="card-btn" onclick="openModal('Asal-Usul Suku Betawi', 'Berdasarkan catatan Wikipedia, untuk memelihara infrastruktur kota Batavia, Belanda mengimpor budak pekerja dari Bali, Sulawesi Selatan, Maluku, Tiongkok Selatan, hingga Malabar India. Percampuran kelompok etnis pendatang inilah yang secara bertahap melebur dan melahirkan identitas kultural baru yang kini dikenal sebagai Suku Betawi dengan ciri khas rumah Kebaya/Panggung.')">Baca Selengkapnya</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="modal" id="infoModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <span class="wiki-source"></span>
-            <h3 id="modalTitle">Judul</h3>
-            <p id="modalBody">Isi detail...</p>
+        <div class="info-box">
+            <h3>Tentang Proyek Ini</h3>
+            <p>Kami menyajikan rangkuman sejarah dari zaman Batavia, hingga kekayaan seni dan kuliner suku Betawi yang wajib dilestarikan!</p>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Ragam Jakarta - Pengembangan Tugas Besar Web Dasar</p>
-        <div class="credits">
-            <p>Dibuat dengan ❤️ oleh Tim WebDas:</p>
-            <p><strong>Jovan (2572009) & AlifI (2572056)</strong></p>
-        </div>
-    </footer>
+    <div class="footer">
+        <p>Copyright 2026 - Tugas Besar Web Dasar</p>
+    </div>
 
-    <script src="script.js">
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
