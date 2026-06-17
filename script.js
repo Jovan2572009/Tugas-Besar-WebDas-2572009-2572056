@@ -157,6 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   setYear();
   renderQuiz();
+  initHeroSlideshow();
   const form = document.getElementById('kontakForm');
   if (form) form.addEventListener('submit', handleFormSubmit);
 });
+
+function initHeroSlideshow() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length < 2) return;
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 4000);
+}
