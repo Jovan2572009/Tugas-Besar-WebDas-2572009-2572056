@@ -9,21 +9,6 @@ function toggleDropdown(drop) {
   drop.classList.toggle('show');
 }
 
-
-function setActiveLink() {
-  const path = window.location.pathname.split('/').pop() || 'index.html';
-  const links = document.querySelectorAll('.nav-links a');
-  for (let i = 0; i < links.length; i++) {
-    const href = links[i].getAttribute('href');
-    if (href === path) {
-      links[i].classList.add('active');
-    } else {
-      links[i].classList.remove('active');
-    }
-  }
-}
-
-
 function initReveal() {
   const items = document.querySelectorAll('.fade-up');
   const reveal = () => {
@@ -153,7 +138,7 @@ function setYear() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  setActiveLink();
+  
   initReveal();
   setYear();
   renderQuiz();
