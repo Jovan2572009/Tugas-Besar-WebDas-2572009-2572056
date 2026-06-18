@@ -296,7 +296,7 @@ section {
 
 .feature img {
   flex: 1;
-  max-width: 420px;
+  max-width: 320px;
 }
 
 .feature-text {
