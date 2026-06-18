@@ -40,8 +40,60 @@ function handleFormSubmit(e) {
   if (pesan.length < 10) return showAlert(out, 'Pesan minimal 10 karakter.', 'error');
   if (!setuju) return showAlert(out, 'Anda harus menyetujui persetujuan.', 'error');
 
-  showAlert(out, `Terima kasih, ${nama}! Pesan Anda tentang "${minat}" sudah kami terima 🎉`, 'success');
+  const dataBaru = {
+    id: Date.now(),
+    nama, email, minat, pesan,
+    tanggal: new Date().toLocaleString('id-ID')
+  };
+  saveKontak(dataBaru);
+  renderKontakList();
+  showAlert(out, `Terima kasih, ${nama}! Pesan Anda tentang "${minat}" sudah kami simpan 🎉`, 'success');
   f.reset();
+}
+// ====== Simpan & Akses Data Kontak (localStorage) ======
+const KONTAK_KEY = 'budaya_betawi_kontak';
+function getKontakList() {
+  try {
+    return JSON.parse(localStorage.getItem(KONTAK_KEY)) || [];
+  } catch (e) {
+    return [];
+  }
+}
+function saveKontak(data) {
+  const list = getKontakList();
+  list.push(data);
+  localStorage.setItem(KONTAK_KEY, JSON.stringify(list));
+}
+function hapusKontak(id) {
+  const list = getKontakList().filter(k => k.id !== id);
+  localStorage.setItem(KONTAK_KEY, JSON.stringify(list));
+  renderKontakList();
+}
+function hapusSemuaKontak() {
+  if (!confirm('Yakin ingin menghapus semua data kontak?')) return;
+  localStorage.removeItem(KONTAK_KEY);
+  renderKontakList();
+}
+function renderKontakList() {
+  const box = document.getElementById('kontakList');
+  if (!box) return;
+  const list = getKontakList();
+  if (list.length === 0) {
+    box.innerHTML = '<p style="text-align:center;color:#777;padding:1rem">Belum ada data kontak tersimpan.</p>';
+    return;
+  }
+  let html = `<div class="kontak-head-bar"><strong>Total: ${list.length} pesan</strong>
+    <button class="btn btn-small btn-danger" onclick="hapusSemuaKontak()">Hapus Semua</button></div>`;
+  for (let i = list.length - 1; i >= 0; i--) {
+    const k = list[i];
+    html += `<div class="kontak-item">
+      <div><strong>${k.nama}</strong> <span class="kontak-badge">${k.minat}</span></div>
+      <p class="kontak-meta">${k.email} • ${k.tanggal}</p>
+      <p class="kontak-pesan">${k.pesan}</p>
+      <button class="btn btn-small btn-danger" onclick="hapusKontak(${k.id})">Hapus</button>
+    </div>`;
+  }
+  box.innerHTML = html;
 }
 
 function showAlert(el, msg, type) {
@@ -138,7 +190,7 @@ function setYear() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+  renderKontakList();
   initReveal();
   setYear();
   renderQuiz();
