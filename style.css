@@ -26,6 +26,9 @@ a {
   color: #fff;
   padding: 1rem;
   border-bottom: 4px solid #f1c40f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav-wrap {
@@ -86,13 +89,17 @@ a {
 
 .dropdown-menu {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
   list-style: none;
   background: #fff;
   color: #333;
   border-radius: 6px;
   padding: 0.4rem;
-  margin-top: 0.3rem;
   border: 2px solid #f1c40f;
+  z-index: 101;
 }
 
 .dropdown-menu a {
