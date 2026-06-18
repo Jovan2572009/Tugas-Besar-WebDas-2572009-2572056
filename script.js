@@ -142,12 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   setYear();
   renderQuiz();
-  initHeroSlideshow();
+  HeroSlideshow();
   const form = document.getElementById('kontakForm');
   if (form) form.addEventListener('submit', handleFormSubmit);
 });
 
-function initHeroSlideshow() {
+function HeroSlideshow() {
   const slides = document.querySelectorAll('.hero-slide');
   if (slides.length < 2) return;
   let i = 0;
